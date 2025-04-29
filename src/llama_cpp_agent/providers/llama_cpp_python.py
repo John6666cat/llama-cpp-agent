@@ -29,7 +29,6 @@ class LlamaCppPythonSamplingSettings(LlmSamplingSettings):
         max_tokens (int): Number of max tokens to generate.
         stream (bool): Enable streaming for long completions.
         additional_stop_sequences (List[str]): List of stop sequences to finish completion generation. The official stop sequences of the model get added automatically.
-        tfs_z (float): Controls the temperature for top frequent sampling.
         typical_p (float): Typical probability for top frequent sampling.
         repeat_penalty (float): Penalty for repeating tokens in completions.
         presence_penalty (float): Penalty for presence of certain tokens.
@@ -48,7 +47,6 @@ class LlamaCppPythonSamplingSettings(LlmSamplingSettings):
         max_tokens (int): Number of max tokens to generate.
         stream (bool): Enable streaming for long completions.
         additional_stop_sequences (List[str]): List of stop sequences to finish completion generation. The official stop sequences of the model get added automatically.
-        tfs_z (float): Controls the temperature for top frequent sampling.
         typical_p (float): Typical probability for top frequent sampling.
         repeat_penalty (float): Penalty for repeating tokens in completions.
         presence_penalty (float): Penalty for presence of certain tokens.
@@ -72,7 +70,6 @@ class LlamaCppPythonSamplingSettings(LlmSamplingSettings):
     max_tokens: int = -1
     stream: bool = False
     additional_stop_sequences: List[str] = None
-    tfs_z: float = 1.0
     typical_p: float = 1.0
     repeat_penalty: float = 1.1
     presence_penalty: float = 0.0
