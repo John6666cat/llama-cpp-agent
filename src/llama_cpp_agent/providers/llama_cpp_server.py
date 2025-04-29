@@ -30,7 +30,6 @@ class LlamaCppSamplingSettings(LlmSamplingSettings):
         n_keep (int): Number of completions to keep. Set to 0 for all predictions.
         stream (bool): Enable streaming for long completions.
         additional_stop_sequences (List[str]): List of stop sequences to finish completion generation. The official stop sequences of the model get added automatically.
-        tfs_z (float): Controls the temperature for top frequent sampling.
         typical_p (float): Typical probability for top frequent sampling.
         repeat_penalty (float): Penalty for repeating tokens in completions.
         repeat_last_n (int): Number of tokens to consider for repeat penalty.
@@ -53,7 +52,6 @@ class LlamaCppSamplingSettings(LlmSamplingSettings):
         n_keep (int): Number of completions to keep. Set to 0 for all predictions.
         stream (bool): Enable streaming for long completions.
         additional_stop_sequences (List[str]): List of stop sequences to finish completion generation. The official stop sequences of the model get added automatically.
-        tfs_z (float): Controls the temperature for top frequent sampling.
         typical_p (float): Typical probability for top frequent sampling.
         repeat_penalty (float): Penalty for repeating tokens in completions.
         repeat_last_n (int): Number of tokens to consider for repeat penalty.
@@ -82,7 +80,6 @@ class LlamaCppSamplingSettings(LlmSamplingSettings):
     n_keep: int = 0
     stream: bool = True
     additional_stop_sequences: List[str] = None
-    tfs_z: float = 1.0
     typical_p: float = 1.0
     repeat_penalty: float = 1.1
     repeat_last_n: int = -1
@@ -325,7 +322,6 @@ class LlamaCppServerProvider(LlmProvider):
             ):
                 settings_dictionary["samplers"] = [
                     "top_k",
-                    "tfs_z",
                     "typical_p",
                     "top_p",
                     "min_p",
