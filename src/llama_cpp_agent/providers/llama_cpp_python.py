@@ -153,6 +153,9 @@ class LlamaCppPythonProvider(LlmProvider):
 
         settings_dictionary = deepcopy(settings.as_dict())
 
+        if "presence_penalty" in settings_dictionary and "present_penalty" not in settings_dictionary:
+            settings_dictionary["present_penalty"] = settings_dictionary.pop("presence_penalty")
+
         settings_dictionary["stop"] = settings_dictionary.pop(
             "additional_stop_sequences"
         )
